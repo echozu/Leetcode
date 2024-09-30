@@ -174,4 +174,32 @@ public class BinarySearch {
         res[1] = left;
         return res;
     }
+
+    //todo:题目4：977 有序数组的平方
+    /*给你一个按 非递减顺序 排序的整数数组 nums，返回 每个数字的平方 组成的新数组，要求也按 非递减顺序 排序。
+    * 输入：nums = [-4,-1,0,3,10]
+    输出：[0,1,9,16,100]
+    解释：平方后，数组变为 [16,1,0,9,100]
+    排序后，数组变为 [0,1,9,16,100]
+    * */
+    //双指针做法
+    public int[] sortedSquares(int[] nums) {
+        int [] result=new int[nums.length];
+        int k=nums.length-1;
+        int i=0;
+        int j=nums.length-1;
+        //todo：这里是<=，为什么是=？因为当i=j没有进入循环时，那么他们指向的数字也将不会进入新数组
+        while (i<=j){
+            //todo：判断谁比较大，因为根据题目，是有序数组，所以平方后最大的只会出现在最左/最右
+            if(nums[i]*nums[i]<nums[j]*nums[j]){
+                result[k]=nums[j]*nums[j];
+                j--;
+            }else {
+                result [k]=nums[i]*nums[i];
+                i++;
+            }
+            k--;
+        }
+        return result;
+    }
 }
