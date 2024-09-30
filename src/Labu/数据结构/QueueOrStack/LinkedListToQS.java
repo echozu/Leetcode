@@ -1,4 +1,4 @@
-package 数据结构.QueueOrStack;
+package Labu.数据结构.QueueOrStack;
 
 import java.util.LinkedList;
 

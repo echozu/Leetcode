@@ -1,5 +1,7 @@
-package 数据结构.QueueOrStack;
+package Labu.数据结构.QueueOrStack;
 //这里<T>/<E>/<ABC>都可以表示泛型，只是人为规定的而已。
+import Labu.数据结构.Array.CircularArray;
+
 import java.util.ArrayList;
 
 //用数组实现队列和栈

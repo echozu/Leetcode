@@ -1,6 +1,4 @@
-package 数据结构.QueueOrStack;
-
-import javax.swing.tree.TreeNode;
+package Labu.数据结构.QueueOrStack;
 
 //基本介绍：
 //队列：先进先出【排队，先来的先买先走】

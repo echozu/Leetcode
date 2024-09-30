@@ -1,4 +1,6 @@
-package 数据结构.QueueOrStack;
+package Labu.数据结构.QueueOrStack;
+
+import Labu.数据结构.Array.CircularArray;
 
 import java.util.LinkedList;
 

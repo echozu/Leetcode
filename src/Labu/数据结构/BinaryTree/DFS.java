@@ -1,4 +1,4 @@
-package 数据结构.BinaryTree;
+package Labu.数据结构.BinaryTree;
 
 import java.util.LinkedList;
 import java.util.Queue;

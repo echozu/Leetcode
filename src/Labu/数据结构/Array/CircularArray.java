@@ -1,4 +1,4 @@
-package 数据结构.QueueOrStack;
+package Labu.数据结构.Array;
 // 实现环形数组
 // 关键点：取余运算！
 // todo：取余的快速运算：1.当 小的数 % 大的数时，结果就是小的数  如：2%4=2；

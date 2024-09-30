@@ -1,4 +1,4 @@
-package 数据结构.Array;
+package Labu.数据结构.Array;
 
 import java.util.ArrayList;
 //有关静态数组和动态数组

@@ -1,4 +1,4 @@
-package 数据结构.ListNode;
+package Labu.数据结构.ListNode;
 
 import java.util.NoSuchElementException;
 

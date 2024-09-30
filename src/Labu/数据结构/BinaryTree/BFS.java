@@ -1,4 +1,4 @@
-package 数据结构.BinaryTree;
+package Labu.数据结构.BinaryTree;
 //递归遍历
 public class BFS {
     public static void main(String[] args) {
