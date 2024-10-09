@@ -3,6 +3,9 @@ package Array;
 
 
 public class BinarySearch {
+    public static void main(String[] args) {
+        generateMatrix(3);
+    }
     //寻找左右边界
     private static boolean check(int x) {
         /* ... */
@@ -201,5 +204,60 @@ public class BinarySearch {
             k--;
         }
         return result;
+    }
+    //todo：题目5：59.螺旋矩阵II
+    /*给你一个正整数 n ，生成一个包含 1 到 n2 所有元素，且元素按顺时针顺序螺旋排列的 n x n 正方形矩阵 matrix 。
+    示例 1：
+    输入：n = 3
+    输出：[[1,2,3],[8,9,4],[7,6,5]]*/
+    public static int[][] generateMatrix(int n) {
+        //todo:因为定义每一圈的起始点是变化的，所以得去定义，方便下面的边界
+    int x=0;
+    int y=0;
+    int num[][]=new int[n][n];
+    //定义
+    int off=1; //todo：这里也是关键，因为下面的j的判断条件是变化的，所以得设定这个
+    int i,j;
+    int count=1;
+    int loop=1; //圈数
+    //为什么是n/2？
+        //完整的绕圈数只有n/2
+    while (loop<=n/2){
+        //i,j坐标：i表示横坐标，j表示纵坐标
+        //这里设定的是左闭右开，即每一行/竖的最后一位都交给下一竖/行去处理
+        //todo：圈的顶部
+        for (j=y;j<n-off;j++){
+            num[x][j]=count++;
+        }
+        //圈的右列
+        for (i=x;i<n-off;i++){
+            num[i][j]=count++;
+        }
+        //这里表示一圈的下面那一行，此时的i=n-off；j=n-off；
+        //然后这里横坐标不变，纵坐标减少
+        //todo：这里为什么不能是j>0,i>0呢，因为这里的>0只符合第一圈，第二圈就不适用了
+        //      也就是说，这里的判断条件0的位置是会变的，所以得用变量！也就有了定义x，y
+        //圈的底部
+        for (;j>y;j--){
+            num[i][j]=count++;
+        }
+        //圈的左列
+        for (;i>x;i--){
+            num[i][j]=count++;
+        }
+        off++;
+        x++;
+        y++;
+        loop++;
+    }
+    //当n是奇数时，因为n/2是向下取整，也就是会差最中间的那个数
+        //[[1,2,3],
+        // [8,9,4], 会差这个9 因为loop>n/2排除掉这个了
+        // [7,6,5]]
+        //todo:判断奇数的方法：% 如果n%2==0，那么n就是偶数
+        if(n%2!=0){
+            num[x][y]=count++;
+        }
+    return num;
     }
 }
